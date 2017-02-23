@@ -4,7 +4,7 @@
     <title>String Escaper</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="escaper.css"> 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -30,7 +30,7 @@
       <label for="escaped" class="control-label">Escaped:</label>
       <div class="input-group">
         <input id="escaped" class="form-control" type="text" readonly />
-        <span id="copy" class="copy-button input-group-addon" role="button" title="Copy to clipboard" data-clipboard-target="escaped" ></span>
+        <span id="copy" class="copy-button input-group-addon" role="button" title="Copy to clipboard" data-clipboard-target="#escaped" ></span>
       </div>
     </div>
     </div>
@@ -43,12 +43,12 @@
     </div>
   </footer>
   
-  <script type="text/javascript" src="ZeroClipboard.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
   <script type="text/javascript">  
     function escapeString(t){ 
       document.getElementById("escaped").value= "\"" + t.replace(/\\/g, "\\\\", "g").replace(/"/g, "\\\"", "g") + "\"";
     }
-    var clip = new ZeroClipboard(document.getElementById("copy"));
+	new Clipboard('#copy');
   </script>  
 </body>
 </html>
